@@ -33,21 +33,30 @@ namespace Tests
         {
             Information.idTime = (int)this.comboBox1.SelectedValue;
 
-            var rec = this.studentTableAdapter.GetData();
-            rec.Where(p => p.NameStudent == this.textBox1.Text && p.idTime == Information.idTime);
+            var rec = this.studentTableAdapter.GetData().Where(p => p.NameStudent == this.textBox1.Text && p.idTime == Information.idTime);            
                 if(rec.Count()==0)
                 {
-                try
-                {
-                    this.studentTableAdapter.Insert(this.textBox1.Text, Information.idTime);
-                    Information.idStudent = rec.Last().idStudent;
-                    MessageBox.Show("Вы успешно зарегестририровались как " + textBox1.Text + "     Id группы " + Convert.ToString(Information.idTime));
-                }catch
-                {
+                    try
+                    {
+                        this.studentTableAdapter.Insert(this.textBox1.Text, Information.idTime);
+                       var recHelp = this.studentTableAdapter.GetData();
+                        Information.idStudent = recHelp.Last().idStudent;
+                        MessageBox.Show("Вы успешно зарегестририровались как " + textBox1.Text + "     Id группы " + Convert.ToString(Information.idTime));
+                    }catch
+                    {
                     MessageBox.Show(" Вас не удалось зарегистрировать в системе");
                     this.Close(); return;
+                    }
+
+                TestSelection test = new TestSelection();
+                test.ShowDialog();
                 }
-                }
+            else
+            {
+                MessageBox.Show("вы вошли как " + textBox1.Text);
+                TestSelection test = new TestSelection();
+                test.ShowDialog();
+            }
         }
     }
 }

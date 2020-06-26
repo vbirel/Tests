@@ -16,3 +16,5 @@ C:\Users\vbirel\Documents\прога\Tests\bin\Debug\InputBox.pdb
 C:\Users\vbirel\Documents\прога\Tests\obj\Debug\Tests.csproj.CopyComplete
 C:\Users\vbirel\Documents\прога\Tests\obj\Debug\Tests.TypeOfQuestion.resources
 C:\Users\vbirel\Documents\прога\Tests\obj\Debug\Tests.StudentRegistration.resources
+C:\Users\vbirel\Documents\прога\Tests\obj\Debug\Tests.TestSelection.resources
+C:\Users\vbirel\Documents\прога\Tests\obj\Debug\Tests.Testing.resources

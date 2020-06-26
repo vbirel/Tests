@@ -51,5 +51,30 @@ namespace Tests
             cb.Text = "";
             panel.Controls.Add(cb);
         }
+
+        public static void LabelDynamic(Panel panel, int left, int top, int width, int height, string labelText)
+        {
+            Label lb = new Label();  
+
+            lb.Height = height;
+            lb.Width = width;
+            lb.Left = left;
+            lb.Top = top;
+            lb.Text = labelText;
+            lb.Font = new Font(lb.Font.Name, 14, lb.Font.Style);
+            panel.Controls.Add(lb);
+        }
+
+        public static void ComboBoxDynamic(Panel panel, int left, int top, int width, int height, string[] mas)
+        {
+            ComboBox cb = new ComboBox();
+            cb.Height = height; 
+            cb.Width = width;
+            cb.Left = left;
+            cb.Top = top;
+            cb.Items.AddRange(mas); 
+            cb.Text = cb.Items[0].ToString();
+            panel.Controls.Add(cb);
+        }
     }
 }

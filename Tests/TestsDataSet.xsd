@@ -273,6 +273,38 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TestSelectionTableAdapter" GeneratorDataComponentClassName="TestSelectionTableAdapter" Name="TestSelection" UserDataComponentName="TestSelectionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TestsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tests.idTest, Tests.NameTest, Ticher.idTicher, Ticher.nameTicher
+FROM            Tests INNER JOIN
+                         Ticher ON Tests.idTicher = Ticher.idTicher</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idTest" DataSetColumn="idTest" />
+              <Mapping SourceColumn="NameTest" DataSetColumn="NameTest" />
+              <Mapping SourceColumn="idTicher" DataSetColumn="idTicher" />
+              <Mapping SourceColumn="nameTicher" DataSetColumn="nameTicher" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TestsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetTests" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetTests" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetTests" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Tests.NameTest, Ticher.nameTicher
+FROM            Tests INNER JOIN
+                         Ticher ON Tests.idTicher = Ticher.idTicher</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -281,7 +313,7 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
   <xs:element name="TestsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TestsDataSet" msprop:Generator_UserDSName="TestsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Result" msprop:Generator_TableClassName="ResultDataTable" msprop:Generator_TableVarName="tableResult" msprop:Generator_RowChangedName="ResultRowChanged" msprop:Generator_TablePropName="Result" msprop:Generator_RowDeletingName="ResultRowDeleting" msprop:Generator_RowChangingName="ResultRowChanging" msprop:Generator_RowEvHandlerName="ResultRowChangeEventHandler" msprop:Generator_RowDeletedName="ResultRowDeleted" msprop:Generator_RowClassName="ResultRow" msprop:Generator_UserTableName="Result" msprop:Generator_RowEvArgName="ResultRowChangeEvent">
+        <xs:element name="Result" msprop:Generator_TableClassName="ResultDataTable" msprop:Generator_TableVarName="tableResult" msprop:Generator_TablePropName="Result" msprop:Generator_RowDeletingName="ResultRowDeleting" msprop:Generator_RowChangingName="ResultRowChanging" msprop:Generator_RowEvHandlerName="ResultRowChangeEventHandler" msprop:Generator_RowDeletedName="ResultRowDeleted" msprop:Generator_UserTableName="Result" msprop:Generator_RowChangedName="ResultRowChanged" msprop:Generator_RowEvArgName="ResultRowChangeEvent" msprop:Generator_RowClassName="ResultRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idRes" msprop:Generator_ColumnVarNameInTable="columnidRes" msprop:Generator_ColumnPropNameInRow="idRes" msprop:Generator_ColumnPropNameInTable="idResColumn" msprop:Generator_UserColumnName="idRes" type="xs:int" minOccurs="0" />
@@ -292,7 +324,7 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Student" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_TableVarName="tableStudent" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_TablePropName="Student" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_RowClassName="StudentRow" msprop:Generator_UserTableName="Student" msprop:Generator_RowEvArgName="StudentRowChangeEvent">
+        <xs:element name="Student" msprop:Generator_TableClassName="StudentDataTable" msprop:Generator_TableVarName="tableStudent" msprop:Generator_TablePropName="Student" msprop:Generator_RowDeletingName="StudentRowDeleting" msprop:Generator_RowChangingName="StudentRowChanging" msprop:Generator_RowEvHandlerName="StudentRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentRowDeleted" msprop:Generator_UserTableName="Student" msprop:Generator_RowChangedName="StudentRowChanged" msprop:Generator_RowEvArgName="StudentRowChangeEvent" msprop:Generator_RowClassName="StudentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idStudent" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidStudent" msprop:Generator_ColumnPropNameInRow="idStudent" msprop:Generator_ColumnPropNameInTable="idStudentColumn" msprop:Generator_UserColumnName="idStudent" type="xs:int" />
@@ -307,7 +339,7 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Teme" msprop:Generator_TableClassName="TemeDataTable" msprop:Generator_TableVarName="tableTeme" msprop:Generator_RowChangedName="TemeRowChanged" msprop:Generator_TablePropName="Teme" msprop:Generator_RowDeletingName="TemeRowDeleting" msprop:Generator_RowChangingName="TemeRowChanging" msprop:Generator_RowEvHandlerName="TemeRowChangeEventHandler" msprop:Generator_RowDeletedName="TemeRowDeleted" msprop:Generator_RowClassName="TemeRow" msprop:Generator_UserTableName="Teme" msprop:Generator_RowEvArgName="TemeRowChangeEvent">
+        <xs:element name="Teme" msprop:Generator_TableClassName="TemeDataTable" msprop:Generator_TableVarName="tableTeme" msprop:Generator_TablePropName="Teme" msprop:Generator_RowDeletingName="TemeRowDeleting" msprop:Generator_RowChangingName="TemeRowChanging" msprop:Generator_RowEvHandlerName="TemeRowChangeEventHandler" msprop:Generator_RowDeletedName="TemeRowDeleted" msprop:Generator_UserTableName="Teme" msprop:Generator_RowChangedName="TemeRowChanged" msprop:Generator_RowEvArgName="TemeRowChangeEvent" msprop:Generator_RowClassName="TemeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idTeme" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTeme" msprop:Generator_ColumnPropNameInRow="idTeme" msprop:Generator_ColumnPropNameInTable="idTemeColumn" msprop:Generator_UserColumnName="idTeme" type="xs:int" />
@@ -321,7 +353,7 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Tests" msprop:Generator_TableClassName="TestsDataTable" msprop:Generator_TableVarName="tableTests" msprop:Generator_RowChangedName="TestsRowChanged" msprop:Generator_TablePropName="Tests" msprop:Generator_RowDeletingName="TestsRowDeleting" msprop:Generator_RowChangingName="TestsRowChanging" msprop:Generator_RowEvHandlerName="TestsRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsRowDeleted" msprop:Generator_RowClassName="TestsRow" msprop:Generator_UserTableName="Tests" msprop:Generator_RowEvArgName="TestsRowChangeEvent">
+        <xs:element name="Tests" msprop:Generator_TableClassName="TestsDataTable" msprop:Generator_TableVarName="tableTests" msprop:Generator_TablePropName="Tests" msprop:Generator_RowDeletingName="TestsRowDeleting" msprop:Generator_RowChangingName="TestsRowChanging" msprop:Generator_RowEvHandlerName="TestsRowChangeEventHandler" msprop:Generator_RowDeletedName="TestsRowDeleted" msprop:Generator_UserTableName="Tests" msprop:Generator_RowChangedName="TestsRowChanged" msprop:Generator_RowEvArgName="TestsRowChangeEvent" msprop:Generator_RowClassName="TestsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idTest" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTest" msprop:Generator_ColumnPropNameInRow="idTest" msprop:Generator_ColumnPropNameInTable="idTestColumn" msprop:Generator_UserColumnName="idTest" type="xs:int" />
@@ -344,7 +376,7 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Ticher" msprop:Generator_TableClassName="TicherDataTable" msprop:Generator_TableVarName="tableTicher" msprop:Generator_RowChangedName="TicherRowChanged" msprop:Generator_TablePropName="Ticher" msprop:Generator_RowDeletingName="TicherRowDeleting" msprop:Generator_RowChangingName="TicherRowChanging" msprop:Generator_RowEvHandlerName="TicherRowChangeEventHandler" msprop:Generator_RowDeletedName="TicherRowDeleted" msprop:Generator_RowClassName="TicherRow" msprop:Generator_UserTableName="Ticher" msprop:Generator_RowEvArgName="TicherRowChangeEvent">
+        <xs:element name="Ticher" msprop:Generator_TableClassName="TicherDataTable" msprop:Generator_TableVarName="tableTicher" msprop:Generator_TablePropName="Ticher" msprop:Generator_RowDeletingName="TicherRowDeleting" msprop:Generator_RowChangingName="TicherRowChanging" msprop:Generator_RowEvHandlerName="TicherRowChangeEventHandler" msprop:Generator_RowDeletedName="TicherRowDeleted" msprop:Generator_UserTableName="Ticher" msprop:Generator_RowChangedName="TicherRowChanged" msprop:Generator_RowEvArgName="TicherRowChangeEvent" msprop:Generator_RowClassName="TicherRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idTicher" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTicher" msprop:Generator_ColumnPropNameInRow="idTicher" msprop:Generator_ColumnPropNameInTable="idTicherColumn" msprop:Generator_UserColumnName="idTicher" type="xs:int" />
@@ -362,6 +394,28 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="nameTicher" msprop:Generator_ColumnVarNameInTable="columnnameTicher" msprop:Generator_ColumnPropNameInRow="nameTicher" msprop:Generator_ColumnPropNameInTable="nameTicherColumn" msprop:Generator_UserColumnName="nameTicher" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TestSelection" msprop:Generator_TableClassName="TestSelectionDataTable" msprop:Generator_TableVarName="tableTestSelection" msprop:Generator_TablePropName="TestSelection" msprop:Generator_RowDeletingName="TestSelectionRowDeleting" msprop:Generator_RowChangingName="TestSelectionRowChanging" msprop:Generator_RowEvHandlerName="TestSelectionRowChangeEventHandler" msprop:Generator_RowDeletedName="TestSelectionRowDeleted" msprop:Generator_UserTableName="TestSelection" msprop:Generator_RowChangedName="TestSelectionRowChanged" msprop:Generator_RowEvArgName="TestSelectionRowChangeEvent" msprop:Generator_RowClassName="TestSelectionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idTest" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTest" msprop:Generator_ColumnPropNameInRow="idTest" msprop:Generator_ColumnPropNameInTable="idTestColumn" msprop:Generator_UserColumnName="idTest" type="xs:int" />
+              <xs:element name="NameTest" msprop:Generator_ColumnVarNameInTable="columnNameTest" msprop:Generator_ColumnPropNameInRow="NameTest" msprop:Generator_ColumnPropNameInTable="NameTestColumn" msprop:Generator_UserColumnName="NameTest" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idTicher" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidTicher" msprop:Generator_ColumnPropNameInRow="idTicher" msprop:Generator_ColumnPropNameInTable="idTicherColumn" msprop:Generator_UserColumnName="idTicher" type="xs:int" />
               <xs:element name="nameTicher" msprop:Generator_ColumnVarNameInTable="columnnameTicher" msprop:Generator_ColumnPropNameInRow="nameTicher" msprop:Generator_ColumnPropNameInTable="nameTicherColumn" msprop:Generator_UserColumnName="nameTicher" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -390,13 +444,20 @@ SELECT idTicher, login, password, nameTicher FROM Ticher WHERE (idTicher = @idTi
       <xs:selector xpath=".//mstns:Ticher" />
       <xs:field xpath="mstns:idTicher" />
     </xs:unique>
+    <xs:unique name="TestSelection_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TestSelection" />
+      <xs:field xpath="mstns:idTest" />
+      <xs:field xpath="mstns:idTicher" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Result_Student" msdata:parent="Student" msdata:child="Result" msdata:parentkey="idStudent" msdata:childkey="idStudent" msprop:Generator_UserChildTable="Result" msprop:Generator_ChildPropName="GetResultRows" msprop:Generator_UserRelationName="FK_Result_Student" msprop:Generator_ParentPropName="StudentRow" msprop:Generator_RelationVarName="relationFK_Result_Student" msprop:Generator_UserParentTable="Student" />
-      <msdata:Relationship name="FK_Result_Tests" msdata:parent="Tests" msdata:child="Result" msdata:parentkey="idTest" msdata:childkey="idTest" msprop:Generator_UserChildTable="Result" msprop:Generator_ChildPropName="GetResultRows" msprop:Generator_UserRelationName="FK_Result_Tests" msprop:Generator_ParentPropName="TestsRow" msprop:Generator_RelationVarName="relationFK_Result_Tests" msprop:Generator_UserParentTable="Tests" />
-      <msdata:Relationship name="FK_Student_Timse" msdata:parent="Teme" msdata:child="Student" msdata:parentkey="idTeme" msdata:childkey="idTime" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="FK_Student_Timse" msprop:Generator_ParentPropName="TemeRow" msprop:Generator_RelationVarName="relationFK_Student_Timse" msprop:Generator_UserParentTable="Teme" />
-      <msdata:Relationship name="FK_Tests_Ticher" msdata:parent="Ticher" msdata:child="Tests" msdata:parentkey="idTicher" msdata:childkey="idTicher" msprop:Generator_UserChildTable="Tests" msprop:Generator_ChildPropName="GetTestsRows" msprop:Generator_UserRelationName="FK_Tests_Ticher" msprop:Generator_ParentPropName="TicherRow" msprop:Generator_RelationVarName="relationFK_Tests_Ticher" msprop:Generator_UserParentTable="Ticher" />
+      <msdata:Relationship name="FK_Result_Student" msdata:parent="Student" msdata:child="Result" msdata:parentkey="idStudent" msdata:childkey="idStudent" msprop:Generator_UserChildTable="Result" msprop:Generator_ChildPropName="GetResultRows" msprop:Generator_UserRelationName="FK_Result_Student" msprop:Generator_RelationVarName="relationFK_Result_Student" msprop:Generator_UserParentTable="Student" msprop:Generator_ParentPropName="StudentRow" />
+      <msdata:Relationship name="FK_Result_Tests" msdata:parent="Tests" msdata:child="Result" msdata:parentkey="idTest" msdata:childkey="idTest" msprop:Generator_UserChildTable="Result" msprop:Generator_ChildPropName="GetResultRows" msprop:Generator_UserRelationName="FK_Result_Tests" msprop:Generator_RelationVarName="relationFK_Result_Tests" msprop:Generator_UserParentTable="Tests" msprop:Generator_ParentPropName="TestsRow" />
+      <msdata:Relationship name="FK_Student_Timse" msdata:parent="Teme" msdata:child="Student" msdata:parentkey="idTeme" msdata:childkey="idTime" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserRelationName="FK_Student_Timse" msprop:Generator_RelationVarName="relationFK_Student_Timse" msprop:Generator_UserParentTable="Teme" msprop:Generator_ParentPropName="TemeRow" />
+      <msdata:Relationship name="FK_Tests_Ticher" msdata:parent="Ticher" msdata:child="Tests" msdata:parentkey="idTicher" msdata:childkey="idTicher" msprop:Generator_UserChildTable="Tests" msprop:Generator_ChildPropName="GetTestsRows" msprop:Generator_UserRelationName="FK_Tests_Ticher" msprop:Generator_RelationVarName="relationFK_Tests_Ticher" msprop:Generator_UserParentTable="Ticher" msprop:Generator_ParentPropName="TicherRow" />
+      <msdata:Relationship name="FK_Result_Tests1" msdata:parent="TestSelection" msdata:child="Result" msdata:parentkey="idTest" msdata:childkey="idTest" msprop:Generator_UserChildTable="Result" msprop:Generator_ChildPropName="GetResultRows" msprop:Generator_UserRelationName="FK_Result_Tests1" msprop:Generator_RelationVarName="relationFK_Result_Tests1" msprop:Generator_UserParentTable="TestSelection" msprop:Generator_ParentPropName="TestSelectionRow" />
+      <msdata:Relationship name="FK_Tests_Ticher1" msdata:parent="Ticher" msdata:child="TestSelection" msdata:parentkey="idTicher" msdata:childkey="idTicher" msprop:Generator_UserChildTable="TestSelection" msprop:Generator_ChildPropName="GetTestSelectionRows" msprop:Generator_UserRelationName="FK_Tests_Ticher1" msprop:Generator_ParentPropName="TicherRow" msprop:Generator_RelationVarName="relationFK_Tests_Ticher1" msprop:Generator_UserParentTable="Ticher" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

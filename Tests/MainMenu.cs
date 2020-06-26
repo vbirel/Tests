@@ -28,7 +28,6 @@ namespace Tests
         private void buttonTesting_Click(object sender, EventArgs e)
         {
             StudentRegistration registration = new StudentRegistration();
-
             registration.ShowDialog();
         }
     }

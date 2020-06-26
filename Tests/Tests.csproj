@@ -90,10 +90,25 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Testing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing.Designer.cs">
+      <DependentUpon>Testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestsDataSet.cs">
+      <DependentUpon>TestsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TestsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TestSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestSelection.Designer.cs">
+      <DependentUpon>TestSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="TypeOfQuestion.cs">
       <SubType>Form</SubType>
@@ -124,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Testing.resx">
+      <DependentUpon>Testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestSelection.resx">
+      <DependentUpon>TestSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TypeOfQuestion.resx">
       <DependentUpon>TypeOfQuestion.cs</DependentUpon>

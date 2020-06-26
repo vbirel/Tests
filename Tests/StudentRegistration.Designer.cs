@@ -41,8 +41,8 @@
             this.idTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.temeTableAdapter = new Tests.TestsDataSetTableAdapters.TemeTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.studentTableAdapter = new Tests.TestsDataSetTableAdapters.StudentTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.temeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -141,20 +141,20 @@
             // 
             this.temeTableAdapter.ClearBeforeFill = true;
             // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(94, 158);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(73, 158);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 54);
+            this.button1.Size = new System.Drawing.Size(135, 60);
             this.button1.TabIndex = 5;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // StudentRegistration
             // 
@@ -189,11 +189,11 @@
         private TestsDataSet testsDataSet;
         private System.Windows.Forms.BindingSource temeBindingSource;
         private TestsDataSetTableAdapters.TemeTableAdapter temeTableAdapter;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource studentBindingSource;
         private TestsDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idStudentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameStudentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
